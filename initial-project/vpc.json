@@ -1,0 +1,34 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "",
+    "Metadata": {},
+    "Parameters": {
+      "MyAppVpcCIDR" : {
+  "Type" : "String",
+  "Default" : "10.0.0.0/16",
+  "Description" : "Select the CIDR nertwork range for VPC"
+}
+    },
+    "Resources": {
+"MyAppVpc": {
+  "Type": "AWS::EC2::VPC",
+  "Properties": {
+    "CidrBlock": {
+      "Ref": "MyAppVpcCIDR"
+    },
+    "InstanceTenancy": "default",
+    "Tags": [
+      {
+        "Key": "Name",
+        "Value": "MyAppVpc"
+      },
+      {
+        "Key": "Owner",
+        "Value": "Prakash"
+      }
+    ]
+  }
+}
+    },
+    "Outputs": {}
+}

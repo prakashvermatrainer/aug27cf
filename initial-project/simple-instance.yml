@@ -1,0 +1,37 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a     # optional
+      ImageId: ami-05fa00d4c63e32376     # required
+      InstanceType: t2.micro     # optional
+      SecurityGroups:
+        - !Ref SSHSecurityroup
+        - !Ref WebServerSecurityroup
+      Tags:
+        - Key: Name     # optional
+          Value: newvm     # optional
+  SSHSecurityroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: To enable SSH
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/20
+        FromPort: 22
+        IpProtocol: tcp
+        ToPort: 22
+  WebServerSecurityroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: To enable website access
+      SecurityGroupIngress:
+      - CidrIp: 0.0.0.0/20
+        FromPort: 80
+        IpProtocol: tcp
+        ToPort: 80
+      - CidrIp: 0.0.0.0/20
+        FromPort: 21
+        IpProtocol: tcp
+        ToPort: 21
