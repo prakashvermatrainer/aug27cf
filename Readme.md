@@ -5,4 +5,5 @@
 - [Depends On](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-dependson.html)
 - [Intrinsic functions](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html)
 - [Deleting Policy](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html)
-
+- [AWS AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html)
+- [Sub function](https://aws.amazon.com/premiumsupport/knowledge-center/cloudformation-fn-sub-function/#:~:text=You%20can%20use%20the%20Fn%3A%3ASub%20function%20to%20substitute,Var1Name%20and%20Var2Name%20with%20a%20Var1Value%20and%20Var2Value.)
